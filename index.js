@@ -342,6 +342,10 @@ function displayPaintings(painting) {
 
 for (let i = 0; i < paintings.length; i++) {
   let currentPainting = paintings[i]
-  displayPaintings(currentPainting)
+
+  if (currentPainting.webImage.width > 2000 && !(currentPainting.principalOrFirstMaker === "Gerard van Honthorst") && (currentPainting.longTitle.slice(-4) < 1800)) {
+    displayPaintings(currentPainting)
+    console.log(currentPainting.longTitle)
+  }
 }
 
